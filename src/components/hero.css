@@ -1,0 +1,51 @@
+
+body {
+  overflow-x: hidden;
+}
+
+.parallax {
+  position: relative;
+  min-height: 75vh;
+  width: 100vw;
+  left: 50%; /* Center the image horizontally */
+  transform: translateX(-50%); /* Center the image horizontally */
+  display: grid;
+  grid-template-areas: "stack";
+  overflow-x: hidden;
+}
+
+.parallax > * {
+  grid-area: stack;
+}
+
+.parallax > img {
+  width: 100%;
+}
+
+.parallax__stars {
+  z-index: 2;
+}
+
+.parallax__planets {
+  z-index: 3;
+}
+
+.parallax__sun {
+  z-index: 4;
+}
+
+.parallax__mountain1 {
+  z-index: 5;
+}
+
+.parallax__mountain2 {
+  z-index: 6;
+}
+
+.parallax__crater {
+  z-index: 7;
+}
+
+.parallax__content {
+  z-index: 5;
+}
