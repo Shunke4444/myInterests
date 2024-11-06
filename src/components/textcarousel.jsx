@@ -1,39 +1,35 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 
-const TextCarousel = () => {
+export default function TextCarousel() {
   const carouselRef = useRef(null);
   const textRef = useRef([]);
 
-  useEffect(() => {
-    const texts = textRef.current;
-    const totalWidth = texts.length * (texts[0]?.offsetWidth || 0);
-    
-    gsap.to(carouselRef.current, {
+  useGSAP(() => {
+    const textItems = textRef.current;
+    const totalWidth = textItems[0].offsetWidth * textItems.length / 2;
+
+    const animation = gsap.to(textItems, {
       x: `-=${totalWidth}`,
-      duration: 10,
-      ease: "none",
+      duration: 26,
+      ease: 'none',
+      repeat: -1,
       modifiers: {
-        x: (x) => {
-          const numX = parseFloat(x);
-          return `${numX % totalWidth}px`;
-        },
-      },
+        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
+      }
     });
-  }, [textRef]); // Dependencies to re-trigger if textRef changes
+  }, [textRef]);
 
   return (
-    <main className="overflow-x-hidden w-[screen]" ref={carouselRef}>
-      <div className="flex outline font-bold font-8bitFont text-[10rem] gap-5">
-        {["RELOAD", "RELOAD", "RELOAD", "RELOAD"].map((text, index) => (
-          <div key={index} className="text-item" ref={(el) => (textRef.current[index] = el)}>
+    <main className="overflow-x-hidden w-screen" ref={carouselRef}>
+      <div className="flex font-customFont opacity-30 italic text-transparent font-bold text-[10rem] gap-[4rem]">
+        {["RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD", "RELOAD"].map((text, index) => (
+          <div key={index} className="text-item" ref={(el) => (textRef.current[index] = el)} style={{ WebkitTextStroke: '1px black' }}>
             {text}
           </div>
-        ))} ``
+        ))}
       </div>
     </main>
   );
-};
-
-export default TextCarousel;
+}

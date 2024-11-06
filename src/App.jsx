@@ -4,6 +4,7 @@ import Persona from './pages/Persona';
 import Programming from './pages/Programming';
 import Food from './pages/Food';
 import Reading from './pages/Reading';
+import Credits from './pages/Credits';
 const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route>
@@ -12,6 +13,7 @@ const router = createBrowserRouter(
       <Route path="food" element={<Food/>} />
       <Route path="reading" element={<Reading/>} />
       <Route path="programming" element={<Programming />} />
+      <Route path= 'credits' element={<Credits/>} />
     </Route>
   )
 );

@@ -17,13 +17,13 @@ export default function Persona() {
           <p className='text-white text-xl font-8bitFont'>Scroll</p>
           <MdOutlineKeyboardArrowDown className=' text-white text-4xl animate-bounce'/>
         </span>
-        <article className='relative z-20 w-[50rem] h-screen flex-col flex items-center justify-center mr-[10rem]'>
-          <img src={Logo} className='h-[16rem] w-auto pb-[2rem]' alt="Logo" />
-          <p className='text-white text-3xl pb-2 font-8bitFont'>Watch the Trailer!</p>
+        <article className='relative z-20 w-[50rem] h-screen flex-col flex items-center justify-center ml-[15rem]'>
+          <img src={Logo} className='h-[13rem] w-auto pb-[2rem]' alt="Logo" />
+          <p className='text-white text-2xl pb-2 font-8bitFont'>Watch the Trailer!</p>
           <iframe 
             src="https://www.youtube.com/embed/xFtdhQoOMH0" 
             width='500'
-            height='300'
+            height='250'
             title="YouTube Video"
           />
         </article>

@@ -2,18 +2,17 @@ import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import PersonaLandPage from '../components/PersonaLandPage';
-import PersonaChara from '../components/personaChara';
 import Makoto from '../assets/persona/1Makoto.avif';
 import UI from '../assets/persona/Persona3UI.jpg';
 import { useGSAP } from '@gsap/react';
+import PersonaChara from '../components/personaChara';
 import BattleUI from '../assets/persona/BattleUI.avif';
 import TextCarousel from '../components/textcarousel'
 
 gsap.registerPlugin(ScrollTrigger);
-
 export default function Persona() {
   const textLeft = useRef([]);
-  const textScroll = useRef([]);
+  const textFade = useRef([]);
   useGSAP(() => {
     const sections = textLeft.current;
     sections.forEach((section, index) => {
@@ -35,13 +34,27 @@ export default function Persona() {
     });
   }, [textLeft]);
 
+
   useGSAP(() => {
-    const infinitescroll = textScroll.current;
-    const getScrollAmount = () => {
-      let racesWidth = infinitescroll.scrollWidth;
-      return -(racesWidth - window.innerWidth);
-    };
-  })
+    const elements = textFade.current;
+    elements.forEach((element) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 1.25,
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 70%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    });
+  }, [textFade]);
+
 
   return (
     <main className='flex flex-col'>
@@ -50,7 +63,7 @@ export default function Persona() {
         {/* Makoto Intro */}
         <article ref={(el) => (textLeft.current[0] = el)} className="h-[70vh] w-[100%] flex-shrink-0 flex items-center gap-[5rem] justify-end">
           <span className='flex-col ml-[10rem]'>
-            <h1 className='text-[7rem] text-personaText font-personaFont font-light'>Introduction</h1>
+            <h1 className='text-[5rem] text-personaText font-personaFont font-light'>Introduction</h1>
             <p className='text-personaP'>The protagonist is a student who has just transferred to Gekkoukan High School, an establishment located on an artificial island. He is attacked by a mysterious monster shortly after moving in, which causes his latent Persona abilities to awaken.
               <br />
               <br />
@@ -59,13 +72,13 @@ export default function Persona() {
               <br />
               What kind of fate awaits him at the end?</p>
           </span>
-          <img ref={(el) => (textLeft.current[0] = el)} src={Makoto} alt="" className='h-[30rem] object-contain' />
+          <img ref={(el) => (textLeft.current[0] = el)} src={Makoto} alt="" className='h-[25rem] object-contain' />
         </article>
         {/* Gameplay Intro */}
         <article ref={(el) => (textLeft.current[1] = el)} className="h-[70vh] w-[100%] flex-shrink-0 flex items-center gap-[5rem] justify-start">
-          <img ref={(el) => (textLeft.current[1] = el)} src={UI} alt="" className='h-[30rem]' />
+          <img ref={(el) => (textLeft.current[1] = el)} src={UI} alt="" className='h-[25rem]' />
           <span className='flex-col mr-[10rem]'>
-            <h1 className='text-[7rem] text-personaText font-personaFont font-extrathin font-light'>Graphics</h1>
+            <h1 className='text-[5rem] text-personaText font-personaFont font-extrathin font-light'>Graphics</h1>
             <p className='text-personaP'>
               Persona 3 Reload combines 2D and 3D elements by using detailed 3D environments for exploration and combat while integrating 2D anime-style portraits and effects for character interactions.
               <br />
@@ -80,7 +93,7 @@ export default function Persona() {
         {/* Gameplay  */}
         <article ref={(el) => (textLeft.current[2] = el)} className="h-[70vh] w-[100%] flex-shrink-0 flex items-center gap-[5rem] justify-end">
           <span className='flex-col ml-[10rem]'>
-            <h1 className='text-[7rem] text-personaText font-personaFont font-light'>Game System</h1>
+            <h1 className='text-[5rem] text-personaText font-personaFont font-light'>Game System</h1>
             <p className='text-personaP'>Persona 3&apos;s battle system is a turn-based combat system where players control the protagonist, who can summon and fuse multiple Personas with unique abilities, while strategically exploiting enemy weaknesses and utilizing AI-controlled allies to gain advantages in battle.
               <br />
               <br />
@@ -91,10 +104,25 @@ export default function Persona() {
           </span>
           <img ref={(el) => (textLeft.current[2] = el)} src={BattleUI} alt="" className='h-[30rem] object-contain' />
         </article>
+
+        
+        <div className='mt-20'>
+          <section ref={(el) => (textFade.current[0] = el)} className='w-screen  flex h-auto flex-col text-center items-center justify-center gap-3'>
+              <div className='h-[4rem] w-[1px] opacity-80 bg-personaText'></div>
+              <p className='text-personaText font-light italic'>Memento Mori
+                <br />
+                I am thou Thou art I
+                <br />
+                Thou shall establish a new bond.
+              </p>
+
+          </section>
+
+          </div>
+
         <TextCarousel />
       </section>
-     
-      <PersonaChara />
+     <PersonaChara />
     </main>
   );
 }

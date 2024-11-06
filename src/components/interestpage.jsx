@@ -106,7 +106,7 @@ Its just a nice past time for me to unwind and relax.`}
 
       <InterestList 
       img={Music} 
-      title='Listening to Music'
+      title='Music'
       sub= {`I listen to a lot of random music.
 Really as long as it sounds good Id listen to it`}
       useMap= '#music'
@@ -114,7 +114,16 @@ Really as long as it sounds good Id listen to it`}
         { shape: 'rect', coords: '8,2,729,367', link: "https://open.spotify.com/playlist/5XbPSn5YCADKgGeHksDBbn?si=5a333cb3367a4191" },
       ]}
       />
-
+      {/* Add image and coords later */}
+      {/* <InterestList
+      img = {}
+      title= 'Credits'
+      sub='These are the sources I&apos;ve used!'
+      useMap='credits'
+      areas{[
+        { shape: 'rect', coords: '', link: '/credits'}
+      ]}
+      /> */}
       
 
     </article>
