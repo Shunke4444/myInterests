@@ -1,20 +1,11 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function PersonaCharaList({ img, title, sub, areas = [], useMap }) {
-  const [hoveredCharacter, setHoveredCharacter] = useState(null);
+export default function PersonaCharaList({ img, title, areas = [], useMap }) {
 
-  const handleMouseEnter = (area) => {
-    setHoveredCharacter(area);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredCharacter(null);
-  };
 
   return (
-    <main className="flex flex-col border-white w-[40rem] items-center justify-center mb-[8rem]">
-      <div className="flex flex-col h-[29rem] w-[23rem] bg-white items-center justify-center">
+    <main className="flex flex-col border-white w-[40rem] items-center justify-center mb-[8rem] text-center">
+      <div className="flex flex-col h-[40rem] w-[30rem] bg-white items-center justify-center">
         <div className="relative h-full w-full overflow-hidden">
           <img
             className="object-cover object-center h-full w-full transition-transform duration-700 ease-in-out transform hover:scale-110"
@@ -31,26 +22,16 @@ export default function PersonaCharaList({ img, title, sub, areas = [], useMap }
               coords={area.coords}
               href={area.link}
               alt={area.alt}
-              onMouseEnter={() => handleMouseEnter(area)}
-              onMouseLeave={handleMouseLeave}
             />
           ))}
         </map>
       </div>
 
-      <div className="flex flex-col p-10">
-        <div className="flex flex-col items-center px-10">
-          <h1 className="font-customFont font-medium text-white text-3xl">{title}</h1>
-          <pre className="text-white mt-3 font-normal text-lg break-words w-full max-w-[50rem]">
-            {sub}
-          </pre>
+      <div className="flex flex-col p-10 text-center">
+        <div className="flex flex-col items-center text-center px-10">
+          <h1 className="font-customFont font-medium text-black text-center text-3xl mr-[2rem]">{title}</h1>
+  
         </div>
-        {hoveredCharacter && (
-          <div className="mt-5 p-5 bg-white text-black rounded shadow-lg">
-            <h2 className="font-bold text-xl">{hoveredCharacter.alt}</h2>
-            <p>{hoveredCharacter.details}</p>
-          </div>
-        )}
       </div>
     </main>
   );
@@ -59,7 +40,6 @@ export default function PersonaCharaList({ img, title, sub, areas = [], useMap }
 PersonaCharaList.propTypes = {
   img: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  sub: PropTypes.string.isRequired,
   areas: PropTypes.arrayOf(
     PropTypes.shape({
       shape: PropTypes.string.isRequired,

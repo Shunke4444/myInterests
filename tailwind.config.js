@@ -18,7 +18,8 @@ export default {
       fontFamily: {
         'customFont': ["Orbitron", "serif"],
         '8bitFont': ["Orbitron", "Serif"],
-        'personaFont' : ["EB Garamond", "serif"]
+        'personaFont' : ["Poppins", "sans-serif"],
+        
       },
       keyframes: {
         grow: {

@@ -9,6 +9,7 @@ const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route>
       <Route index element={<LandingPage />} />
+      <Route path="home" element={<LandingPage />} />
       <Route path="persona" element={<Persona />} />
       <Route path="food" element={<Food/>} />
       <Route path="reading" element={<Reading/>} />
