@@ -7,7 +7,7 @@ import UI from '../assets/persona/Persona3UI.jpg';
 import { useGSAP } from '@gsap/react';
 import PersonaChara from '../components/personaChara';
 import BattleUI from '../assets/persona/BattleUI.avif';
-import TextCarousel from '../components/textcarousel'
+import TextCarousel from '../components/textcarousel';
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Persona() {
