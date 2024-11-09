@@ -6,7 +6,7 @@ import Makoto from '../assets/persona/1Makoto.avif';
 import UI from '../assets/persona/Persona3UI.jpg';
 import { useGSAP } from '@gsap/react';
 import PersonaChara from '../components/personaChara';
-import BattleUI from '../assets/persona/BattleUI.avif';
+import BattleUI from '../assets/persona/personaBattle.jpg';
 import TextCarousel from '../components/textcarousel';
 
 gsap.registerPlugin(ScrollTrigger);
