@@ -53,7 +53,10 @@ export default function HeroPage() {
     <section className="parallax flex overflow-hidden w-screen absolute top-[10%] h-[120%] bg-gray-900">
       <div className='parallax__content absolute top-[10%] left-40  flex flex-col lg:flex-row items-start z-10'>
         <span className="flex-col lg:mb-0">
+        <h1 className='font-medium font-customFont text-white text-[2rem]'>Made by Jihad Tejam</h1>
+
           <h1 className='font-medium font-customFont text-white text-[8rem]'>
+
             <span className="text-shadow">These are my <br /></span>
             <span className="typewriter-text text-heroColor text-[10rem] mt-0 drop-shadow-lg" ref={typewriterRef}></span> 
             <span className="cursor text-[7rem] text-heroColor">|</span>
