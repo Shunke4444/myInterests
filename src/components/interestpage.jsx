@@ -75,6 +75,7 @@ Specialized Extracurricular Execution Squad (SEES).`}
       sub= {`I listen to a lot of random music.
 Really as long as it sounds good Id listen to it`}
       useMap= '#music'
+      openInNewTab='_"blank"'
       areas={[
         { shape: 'rect', coords: '8,2,729,367', link: "https://open.spotify.com/playlist/5XbPSn5YCADKgGeHksDBbn?si=5a333cb3367a4191" },
       ]}

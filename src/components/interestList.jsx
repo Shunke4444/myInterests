@@ -1,4 +1,4 @@
-export default function InterestList({ img, title, sub, areas, useMap }) {
+export default function InterestList({ img, title, sub, areas, useMap, openInNewTab }) {
   return (
     <main className="flex flex-col border border-t-0 border-white w-[50rem]">
       <div className="flex flex-col pb-10 p-10 mt-[5rem] items-center">
@@ -17,6 +17,8 @@ export default function InterestList({ img, title, sub, areas, useMap }) {
               coords={area.coords}
               href={area.link}
               alt={area.alt}
+              target={openInNewTab ? "_blank" : "_self"}
+
             />
           ))}
         </map>

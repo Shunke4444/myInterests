@@ -22,6 +22,7 @@ export default function PersonaCharaList({ img, title, areas = [], useMap }) {
               coords={area.coords}
               href={area.link}
               alt={area.alt}
+              
             />
           ))}
         </map>
