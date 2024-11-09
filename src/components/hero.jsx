@@ -3,7 +3,12 @@ import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import '../components/hero.css'
 import Spaceman from './spaceman'
-
+import Stars from '../assets/parallax/1Stars.svg'
+import Planets from '../assets/parallax/2Planets.svg' 
+import Mountain from '../assets/parallax/3Mountain.svg'
+import Mountain2 from '../assets/parallax/4Mountain.svg'
+import Crater from '../assets/parallax/5Crater.svg'
+import Sun from '../assets/parallax/6Sun.svg'
 gsap.registerPlugin(TextPlugin);
 
 export default function HeroPage() {
@@ -65,11 +70,11 @@ export default function HeroPage() {
       </div>
 
       <Spaceman className= "parallax__contents" />
-      <img className="parallax__stars z-10 w-full" src="./src/assets/parallax/1Stars.svg" alt="" />
-      <img className="parallax__planets z-10 w-full" src="./src/assets/parallax/2Planets.svg" alt="" />
-      <img className="parallax__mountain1 z-10 w-full" src="./src/assets/parallax/3Mountain.svg" alt="" />
-      <img className="parallax__mountain2 z-10 w-full" src="./src/assets/parallax/4Mountain.svg" alt="" />
-      <img className="parallax__crater z-10 w-full absolute bottom-[2%]" src="./src/assets/parallax/5Crater.svg" alt="" />
+      <img className="parallax__stars z-10 w-full" src={Stars} />
+      <img className="parallax__planets z-10 w-full" src={Planets} />
+      <img className="parallax__mountain1 z-10 w-full" src={Mountain} />
+      <img className="parallax__mountain2 z-10 w-full" src={Mountain2} />
+      <img className="parallax__crater z-10 w-full absolute bottom-[2%]" src={Crater}  />
     </section>
   );
 }
