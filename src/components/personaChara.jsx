@@ -121,7 +121,7 @@ const PersonaChara = () => {
 
           <PersonaCharaList img={Takaya} title='Takaya Sakaki' />
           <PersonaCharaList img={Jin} title='Jin Shirato' />
-          <PersonaCharaList img={Chidori} title='Takaya Sakaki' />
+          <PersonaCharaList img={Chidori} title='Chidori Yoshino' />
           <div className='h-screen w-[50rem] mb-[8rem] flex items-center justify-center '>
             <Link to= "/home">
             <button className='flex flex-col items-center justify-center'>

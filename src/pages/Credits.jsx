@@ -3,6 +3,9 @@ import CreditSpaceman from '../assets/credits/1.png'
 import SpaceBg from '../assets/credits/bg.png'
 import Persona from '../assets/interests/persona3.jpg'
 import Fonts from '../assets/credits/fonts.jpg'
+import { Link } from 'react-router-dom'
+import { FaHouseChimney } from "react-icons/fa6";
+
 export default function Credits() {
   return (
     <main className='h-screen w-screen'>
@@ -75,7 +78,14 @@ export default function Credits() {
             ]}
             useMap='#fonts'
           />
-          
+          <div className=' h-[10rem] w-screen flex items-center justify-center bg-inherit'>
+            <Link to="/home">
+            <button className='font-personaFont font-medium text-lg text-white'>
+              <FaHouseChimney className='text-[5rem] font-bold text-gray-900 '/>
+              Home
+            </button>
+            </Link>
+          </div>
         </section>
     </main>
   )

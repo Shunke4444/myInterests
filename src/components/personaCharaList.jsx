@@ -5,7 +5,7 @@ export default function PersonaCharaList({ img, title, areas = [], useMap }) {
 
   return (
     <main className="flex flex-col border-white w-[40rem] items-center justify-center mb-[8rem] text-center">
-      <div className="flex flex-col h-[35rem] w-[30rem] bg-white items-center justify-center">
+      <div className="flex flex-col h-[30rem] w-[25rem] bg-white items-center justify-center">
         <div className="relative h-full w-full overflow-hidden">
           <img
             className="object-cover object-center h-full w-full transition-transform duration-700 ease-in-out transform hover:scale-110"
