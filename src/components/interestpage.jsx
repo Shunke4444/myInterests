@@ -2,10 +2,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import InterestList from './interestList';
-import Food from '../assets/interests/Food.jpg'
-import Orv from '../assets/interests/ORV.jpg'
+import Credits from '../assets/interests/Credits.webp'
 import Persona from '../assets/interests/persona3.jpg'
-import Program from '../assets/interests/Programming.png'
 import Music from '../assets/interests/Spotify.png'
 import Grid from '../assets/GridDesign.png';
 
@@ -72,39 +70,6 @@ Specialized Extracurricular Execution Squad (SEES).`}
       />
       
       <InterestList 
-      img={Food} 
-      title='Food'
-      sub= {`I love food. I dont know how to cook, but I know how to eat. 
-I love to try new foods and I love to cook new foods.`}
-      useMap= '#food'
-      areas={[
-        { shape: 'rect', coords: '4,-1,1594,894', link: '/food' },
-      ]}
-      />
-
-      <InterestList 
-      img={Orv} 
-      title='Reading'
-      sub= {`I read a lot of fiction mainly manhwas.
-Its just a nice past time for me to unwind and relax.`}
-      useMap= '#reading'
-      areas={[
-        { shape: 'rect', coords: '6,3,1596,889', link: '/reading' },
-      ]}
-      />
-
-
-      <InterestList 
-      img={Program} 
-      title= "Programming"
-      sub= 'Help.'
-      useMap= '#programming'  
-      areas={[
-        { shape: 'rect', coords: '4,1,548,316', link: '/programming' },
-      ]}
-      />
-
-      <InterestList 
       img={Music} 
       title='Music'
       sub= {`I listen to a lot of random music.
@@ -114,16 +79,15 @@ Really as long as it sounds good Id listen to it`}
         { shape: 'rect', coords: '8,2,729,367', link: "https://open.spotify.com/playlist/5XbPSn5YCADKgGeHksDBbn?si=5a333cb3367a4191" },
       ]}
       />
-      {/* Add image and coords later */}
-      {/* <InterestList
-      img = {}
+      <InterestList
+      img = {Credits}
       title= 'Credits'
       sub='These are the sources I&apos;ve used!'
-      useMap='credits'
-      areas{[
-        { shape: 'rect', coords: '', link: '/credits'}
+      useMap='#credits'
+      areas={[
+        { shape: 'rect', coords: '8,13,1263,710', link: '/credits'}
       ]}
-      /> */}
+      />
       
 
     </article>
