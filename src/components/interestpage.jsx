@@ -60,7 +60,6 @@ const InterestPage = () => {
           <h1 className='text-[4rem] md:text-[8rem] font-customFont font-bold text-white'>MY INTERESTS</h1>
         </div>
         <hr className='bg-white h-[1px] w-screen m-0'/>
-
         <article className="inline-flex whitespace-nowrap" ref={racesRef}>
           <div className='h-screen w-[300px] md:w-[500px] bg-cover bg-center' style={{backgroundImage: `url(${Grid})`}}></div>
               
